@@ -3,6 +3,7 @@ body{
 }
 
 #adding{
+    position: absolute;
     height: 7%;
     left:15%;
     top:15%;
@@ -10,6 +11,7 @@ body{
 }
 
 #maid_count{
+    position: absolute;
     height: 7%;
     left:25%;
     top:15%;
@@ -17,8 +19,40 @@ body{
 }
 
 #taking{
+    position: absolute;
     height: 7%;
     left:35%;
     top:15%;
     width: 7;
+}
+
+#start{
+    position: absolute;
+    height: 7%;
+    left:50%;
+    top:15%;
+    width: 7;
+}
+
+#stop{
+    position: absolute;
+    height: 7%;
+    left:70%;
+    top:15%;
+    width: 7;
+}
+
+#clock{
+    position: absolute;
+    text-align: center;
+    left:50%;
+    top:10%;
+    width: 27%;
+}
+
+.maids{
+    background-color: brown;
+    position: absolute;
+    top:30%;
+    text-align: center;
 }
