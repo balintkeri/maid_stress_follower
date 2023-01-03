@@ -7,9 +7,21 @@
         
         $(document).ready(function(){
              $("adding").click(function(){
-                maid_count--;
+                maid_count++;
                 document.getElementById("maid_count").innerHTML = maid_count;
              });
+
+             $("taking").click(function(){
+                if(maid_count>0){
+                    maid_count--;
+                    document.getElementById("maid_count").innerHTML = maid_count;
+                }
+                else{
+                    alert("Cant take away any Maid")
+                }
+             });
+
+             
         });
 
         maid_count = 0;

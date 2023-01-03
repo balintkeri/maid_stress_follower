@@ -1,3 +1,24 @@
 body{
     background-color: blueviolet;
 }
+
+#adding{
+    height: 7%;
+    left:15%;
+    top:15%;
+    width: 7;
+}
+
+#maid_count{
+    height: 7%;
+    left:25%;
+    top:15%;
+    width: 7;
+}
+
+#taking{
+    height: 7%;
+    left:35%;
+    top:15%;
+    width: 7;
+}
