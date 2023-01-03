@@ -2,9 +2,17 @@
 <html>
 <head>
     <link rel="stylesheet" href="somethinlikecssfilename.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
         
-        maid_count = 1;
+        $(document).ready(function(){
+             $("adding").click(function(){
+                maid_count--;
+                document.getElementById("maid_count").innerHTML = maid_count;
+             });
+        });
+
+        maid_count = 0;
 
         class Maid {
             constructor(stress_limit, height, weigth) {
@@ -13,7 +21,6 @@
             this.weigth = weigth;
         }
         }
-
         
     </script>
     <title>Maid Stress follower</title>
@@ -21,7 +28,7 @@
 <body>
 
     <div id="adding">+</div>
-    <div>0</div>
+    <div id="maid_count">0</div>
     <div id="taking">-</div>
     <div id="start">Start</div>
     <div id="stop">Stop</div>
