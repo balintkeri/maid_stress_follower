@@ -2,6 +2,8 @@ body{
     background-color: blueviolet;
 }
 
+
+
 #adding{
     position: absolute;
     height: 7%;
@@ -51,8 +53,23 @@ body{
 }
 
 .maids{
-    background-color: brown;
     position: absolute;
-    top:30%;
+    left:20%;
+    top:40%;
+    background-color: brown;
     text-align: center;
+    width: 16.4%;
+}
+
+.pic{
+    position: relative;
+    width: 85%;
+}
+
+#str_button{
+    position: absolute;
+    text-align: center;
+    left:50%;
+    top:5%;
+    width: 27%;
 }
