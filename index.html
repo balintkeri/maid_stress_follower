@@ -157,21 +157,27 @@
             var div = document.createElement("input");
             div.id= id+"_input";
             div.type="button";
-            div.setAttribute("onclick","asd(this.id)");
+            div.setAttribute("onclick","add(this.id)");
             div.value="Give her some stress";
             document.getElementById(id).appendChild(div);
             
         }
 
-        function asd(id) {
+        function add(id) {
             if(Number.isInteger(Number(document.getElementById("maid_"+id[5]+"_input").value))){
-            maids[Number(id[5])].stress+=Number(document.getElementById("maid_"+id[5]+"_input").value);
-            document.getElementById("maid_"+id[5]+"_input").value="";
-            update_maids();
+                maids[Number(id[5])].stress+=Number(document.getElementById("maid_"+id[5]+"_input").value);
+                if(maids[Number(id[5])].out==0){
+                    maids[Number(id[5])].out=(maids[Number(id[5])].stress-maids[Number(id[5])].stress_limit)*60;
+                }
+                else{
+                    maids[Number(id[5])].out+=Number(document.getElementById("maid_"+id[5]+"_input").value)*60;
+                }
+                document.getElementById("maid_"+id[5]+"_input").value="";
             }
             else{
                 alert("Stress should be an integer!")
             }
+            update_maids();
         }
 
         //Div creator
@@ -191,12 +197,26 @@
                 document.getElementById(maids[i].id+"_name").innerHTML="Name: "+maids[i].name;
                 document.getElementById(maids[i].id+"_limit").innerHTML="Stress limit: "+maids[i].stress_limit;
                 document.getElementById(maids[i].id+"_stress").innerHTML="Stress: "+maids[i].stress;
-                if(maids[i].stress>=maids[i].stress_limit){
+                if(maids[i].stress>maids[i].stress_limit){
                     document.getElementById(maids[i].id+"_pic").src="sad.png";
-                    document.getElementById(maids[i].id+"_clock").innerHTML="She is out for";
+                    var time_text="";
+                    if(Math.floor(maids[i].out/60)<10){
+                        time_text+="0"+Math.floor(maids[i].out/60)+":";
+                    }
+                    else{
+                        time_text+=Math.floor(maids[i].out/60)+":";
+                    }
+                    if(maids[i].out%60<10){
+                        time_text+="0"+maids[i].out%60;
+                    }
+                    else{
+                        time_text+=maids[i].out%60;
+                    }
+                    document.getElementById(maids[i].id+"_clock").innerHTML="She is out for "+time_text;
                 }
                 else{
                     document.getElementById(maids[i].id+"_pic").src="happy.png";
+                    maids[i].out=0;
                     document.getElementById(maids[i].id+"_clock").innerHTML="This Maid is ready to serve you";
                 }
             }
