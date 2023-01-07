@@ -11,8 +11,19 @@
         //Maid adding function
 
         function adding(){
-            let maid_name = prompt("Please enter Maid's name", "Maid's name");
-            let stress_limit = prompt("Please enter Maid's stress limit", "100");
+            var maid_name = prompt("Please enter Maid's name", "Maid's name");
+
+            var ok=false;
+            while (ok==false){
+                var stress_limit = prompt("Please enter Maid's stress limit", "100");
+                if( Number.isInteger(Number(stress_limit)) && Number(stress_limit)>0 ){
+                    ok=true;
+                }
+                else{
+                    alert("Maid's stress limit should be a positive integer!")
+                }
+            }
+            
             
             maids.push(new Maid(stress_limit,maid_name));
             update_maids();
@@ -162,6 +173,8 @@
             document.getElementById(id).appendChild(div);
             
         }
+
+        //Stress adding
 
         function add(id) {
             if(Number.isInteger(Number(document.getElementById("maid_"+id[5]+"_input").value))){
