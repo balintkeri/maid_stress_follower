@@ -153,7 +153,25 @@
             var div = document.createElement("input");
             div.id= id+"_input";
             document.getElementById(id).appendChild(div);
+
+            var div = document.createElement("input");
+            div.id= id+"_input";
+            div.type="button";
+            div.setAttribute("onclick","asd(this.id)");
+            div.value="Give her some stress";
+            document.getElementById(id).appendChild(div);
             
+        }
+
+        function asd(id) {
+            if(Number.isInteger(Number(document.getElementById("maid_"+id[5]+"_input").value))){
+            maids[Number(id[5])].stress+=Number(document.getElementById("maid_"+id[5]+"_input").value);
+            document.getElementById("maid_"+id[5]+"_input").value="";
+            update_maids();
+            }
+            else{
+                alert("Stress should be an integer!")
+            }
         }
 
         //Div creator
@@ -183,20 +201,6 @@
                 }
             }
         }
-
-        //Stress adder
-
-        function Stress_adding(){
-            for (let i = 0; i < maids.length; i++) {
-                maids[i].stress+=Number(document.getElementById(maids[i].id+"_input").value);
-                if(Number(document.getElementById(maids[i].id+"_input").value)>0){
-                    maids[i].out+=60*Number(document.getElementById(maids[i].id+"_input").value);
-                }
-                document.getElementById(maids[i].id+"_input").value="";
-                update_maids();
-            }
-        }
-        
         
     </script>
     <title>Maid Stress follower</title>
@@ -207,7 +211,6 @@
     <div id="taking" onclick="taking()">-</div>
     <div id="start" onclick="start()">Start</div>
     <div id="stop" onclick="stop()">Stop</div>
-    <button id="str_button" onclick=Stress_adding()>Give them some stress</button>
     <div id="clock">00 : 00 : 00</div>
 
 </body>
