@@ -1,14 +1,23 @@
 body{
-    background-color: blueviolet;
+    background-color: #fc71c2;
+    font-family: "Cookie";
 }
 
+.text{
+    font-size: 400%;
+    font-weight: bold;
+}
 
+.hov:hover{
+    color: rgb(41, 41, 41);
+    font-size: 410%
+}
 
 #adding{
     position: absolute;
     height: 7%;
     left:15%;
-    top:15%;
+    top:14%;
     width: 7;
 }
 
@@ -16,7 +25,7 @@ body{
     position: absolute;
     height: 7%;
     left:25%;
-    top:15%;
+    top:14%;
     width: 7;
 }
 
@@ -24,7 +33,7 @@ body{
     position: absolute;
     height: 7%;
     left:35%;
-    top:15%;
+    top:14%;
     width: 7;
 }
 
@@ -48,8 +57,9 @@ body{
     position: absolute;
     text-align: center;
     left:50%;
-    top:10%;
+    top:7%;
     width: 27%;
+    font-size: 400%;
 }
 
 .maids{
@@ -59,6 +69,7 @@ body{
     background-color: brown;
     text-align: center;
     width: 16.4%;
+    font-size: 140%;
 }
 
 .pic{
@@ -72,4 +83,15 @@ body{
     left:50%;
     top:5%;
     width: 27%;
+}
+
+.input{
+    font-family: "Cookie";
+    font-size: 150%;
+}
+
+#Title{
+    position: absolute;
+    left:16%;
+    top: 5%;
 }
